@@ -41,7 +41,7 @@ else{
   alert('Please answer y or n');
 }
 
-let questionFour = prompt('President Obama graduated from Punahou School. Do you think I also graduate from the same school?').toLowerCase;
+let questionFour = prompt('President Obama graduated from Punahou School. Do you think I also graduated from the same school?').toLowerCase;
 console.log(questionFour);
 
 if (questionFour === 'yes' || questionFour === 'y'){
