@@ -11,9 +11,9 @@ alert('Welcome to my site ${username}! We will play a guessing game, please answ
 
 let questionOneGuess = prompt('Do I have a duaghter?').toLowerCase;
 
-if (questionOneGuess === 'yes' || questionOneGuess === 'n'){
-    alert('You are correct!');
-    else if(questionOneGuess === 'no')
+if (questionOneGuess === 'yes' || questionOneGuess === 'y'){
+    alert('You are correct!');}
+    else if(questionOneGuess === 'no' || questionOneGuess === 'n'){
     alert('Sorry you are incorrect');
 }
 
