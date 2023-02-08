@@ -1,5 +1,23 @@
+body {
+    font-size: 2vw;
+    background-color: grey;
+    color: black;
+}
+
 h1 {
-    font-size: 3vw;
+    font-size: 4vw;
     background-color: aqua;
     color: grey;
+}
+
+h2 {
+    font-size: 3vw;
+    background-color: blue;
+    color: white;
+}
+
+footer {
+    font-size: 2vw;
+    background-color: green;
+    color: yellow;
 }

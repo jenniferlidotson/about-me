@@ -16,7 +16,7 @@ Aloha! I invite you to learn more about me through a fun guessing game.  I will 
 
 ## Lighthouse Accessibility Report
 
-// ()
+![Lighthouse Accessibility Report](img/Accessibility.png)
 
 ## Reflections and Comments
 

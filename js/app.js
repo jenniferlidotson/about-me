@@ -3,7 +3,7 @@ console.log('hey world hey!');
 
 let userName = prompt('Aloha! What is your name?');
 //console.log('userName')
-alert('Aloha ${userName}! We will play a fun guessing game, please answer y or n.');
+alert('Aloha ' + userName + '! We will play a fun guessing game, please answer y or n.');
 
 let questionOne = prompt('I am from Hawaii. Is Hawaii also known as the Aloha State?').toLowerCase;
 
@@ -50,4 +50,4 @@ else if(questionFive === 'no' || questionFive === 'n'){
   alert('Good try, but you are incorrect. Try the next question!');
 }
 
-alert('That was fun, ${userName}. I hope you enjoyed my guessing game!');
+alert('That was fun ' + userName + '! I hope you enjoyed my guessing game!')
