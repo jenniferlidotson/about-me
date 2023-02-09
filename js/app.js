@@ -72,54 +72,43 @@ else{
   alert('Please answer y or n');
 }
 
-let totalAttempts = 4;
+let myNumber = 3
 
-let questionSix = prompt('What is my favorite number? You have 4 chances to guess!');
-console.log(questionSix);
+for(let i = 0; i < 4; i++){
 
-let convertNumber = parseInt(questionSix);
-
-if (convertNumber === 3) {
-  alert(`Great guess, ${userName}! My favorite number is 3!`);
-}
-else if (convertNumber > 3) {
-  alert('That number is too high.');
-  totalAttempts--;
-  alert(`You have ${totalAttempts} more chances to guess the correct number!`);
-}
-else if (convertNumber < 3) {
-  alert('That number is too low.');
-  totalAttempts--;
-  alert(`You have ${totalAttempts} more chances to guess the correct number!`);
-}
-else (totalAttempts === 4); {
-  alert('Shucks, no more chances left to guess.  The correct number is 3.');
+  let questionSix = +prompt('What is my favorite number? You have 4 chances to guess!');
+  console.log(questionSix);
   score++;
+  if(questionSix > myNumber){
+    alert('Sorry, that guess is too high.');
+  } else if(questionSix < myNumber){
+    alert('Sorry, that guess is too low');
+  } else if(questionSix === myNumber){
+    alert('Awesome, you are correct! My favorite number is 3!');
+    break;
+  }
+  if(i === 3){
+    alert('Sorry, you used your 4 chances to guess!');
+  }
 }
+
 
 let favoriteColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple'];
 
-let colorGuess = 6;
+for(let i = 0; i < 6; i++){
 
-let correctGuess = false;
-
-while (colorGuess < 6 && correctGuess === false){
   let questionSeven = prompt ('What are my favorite colors in the rainbow? You have 6 chances to guess!').toLowerCase();
   console.log(questionSeven);
+  score++;
 
-  for(let i = 0; i < favoriteColors.length; i++){
-    if(questionSeven === favoriteColors[i]){
-      alert(`You guessed correctly, ${userName}! My favorite colors are ${favoriteColors}!`);
-      score++;
+  for(let j = 0; j < favoriteColors.length; j++){
+    if(questionSeven === favoriteColors[j]){
+      alert('YES! YOU ARE AWESOME! I LOVE THAT COLOR!');
+      i = 5;
       break;
-    }
-    if(i === favoriteColors.length - 1){
-      colorGuess++;
-      alert('Try again!');
-    }
-    if(colorGuess === 6){
-      alert(`Darn ${userName}, you didn't guess my favorite colors are ${favoriteColors}.`);
     }
   }
 }
+alert(`Here are all my favorite colors: ${favoriteColors}`);
+
 alert(`Thank you, ${userName}! I hope you enjoyed my guessing game. You correctly guessed ${score} out of 7 questions!`);
