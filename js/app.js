@@ -1,6 +1,8 @@
 'use strict';
 console.log('hey world hey!');
 
+let score = 0
+
 let userName = prompt('Aloha! What is your name?');
 console.log(userName);
 alert(`Aloha ${userName}! Let's play a fun guessing game, please answer y or n.`);
@@ -9,6 +11,7 @@ let questionOne = prompt('I am from Hawaii. Is Hawaii also known as the Aloha St
 console.log(questionOne);
 
 if (questionOne === 'yes' || questionOne === 'y'){
+  score++;
   alert('You are correct! Try the next question!');}
 else if(questionOne === 'no' || questionOne === 'n'){
   alert('Good try, but you are incorrect. Try the next question!');
@@ -21,6 +24,7 @@ let questionTwo = prompt('Hawaii became part of USA in 1959. Do you think I was 
 console.log(questionTwo);
 
 if (questionTwo === 'no' || questionTwo === 'n'){
+  score++;
   alert('You are correct! Try the next question!');}
 else if(questionTwo === 'yes' || questionTwo === 'y'){
   alert('Good try, but you are incorrect. Try the next question!');
@@ -33,6 +37,7 @@ let questionThree = prompt('Honolulu is the capital of Hawaii. Do you think I go
 console.log(questionThree);
 
 if (questionThree === 'yes' || questionThree === 'y'){
+  score++;
   alert('You are correct! Try the next question!');}
 else if(questionThree === 'no' || questionThree === 'n'){
   alert('Good try, but you are incorrect. Try the next question!');
@@ -45,6 +50,7 @@ let questionFour = prompt('President Obama graduated from Punahou School. Do you
 console.log(questionFour);
 
 if (questionFour === 'yes' || questionFour === 'y'){
+  score++;
   alert('You are correct! Try the next question!');}
 else if(questionFour === 'no' || questionFour === 'n'){
   alert('Good try, but you are incorrect. Try the next question!');
@@ -56,13 +62,35 @@ else{
 let questionFive = prompt('Hula is a traditional dance in Hawaii. Do you think I also dance hula?').toLowerCase;
 console.log(questionFive);
 
-if (questionFive === 'yes' || questionFive === 'y'){
+if (questionFive === 'yes' || questionFive === 'y');{
+  score++;
   alert('You are correct! Try the next question!');}
-else if(questionFive === 'no' || questionFive === 'n'){
+else if(questionFive === 'no' || questionFive === 'n');{
   alert('Good try, but you are incorrect. Try the next question!');
 }
 else{
   alert('Please answer y or n');
 }
 
-alert('That was fun ' + userName + '! I hope you enjoyed my guessing game!')
+let questionSix = prompt('What is my favorite number? You have 4 chances to guess!');
+  console.log(questionSix);
+
+for (let i = 0; i < 4; i++) {
+  if (i === 3) {
+    alert(`Great guess, ${userName}! My favorite number is 3!`);
+    }else if(questionSix < 3) {
+      questionSix = prompt('That guess is too low! Try again.');
+    }else if(questionSix > 3) {
+      questionSix = prompt('That guess is too high! Try again.');
+    }else {
+      alert('Congrats! You guessed my favorite number is 3!'); 
+      score++
+      break;
+    }
+  }
+
+
+
+
+
+  alert(`Thank you, ${userName}! I hope you enjoyed my guessing game. You correctly guessed ${score} out of 7 questions!`);
