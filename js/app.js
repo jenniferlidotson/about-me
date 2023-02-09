@@ -1,7 +1,7 @@
 'use strict';
 console.log('hey world hey!');
 
-let score = 0
+let score = 0;
 
 let userName = prompt('Aloha! What is your name?');
 console.log(userName);
@@ -62,35 +62,53 @@ else{
 let questionFive = prompt('Hula is a traditional dance in Hawaii. Do you think I also dance hula?').toLowerCase;
 console.log(questionFive);
 
-if (questionFive === 'yes' || questionFive === 'y');{
+if (questionFive === 'yes' || questionFive === 'y'){
   score++;
   alert('You are correct! Try the next question!');}
-else if(questionFive === 'no' || questionFive === 'n');{
+else if(questionFive === 'no' || questionFive === 'n'){
   alert('Good try, but you are incorrect. Try the next question!');
 }
 else{
   alert('Please answer y or n');
 }
 
+let totalAttempts = 4;
+
 let questionSix = prompt('What is my favorite number? You have 4 chances to guess!');
-  console.log(questionSix);
+console.log(questionSix);
 
-for (let i = 0; i < 4; i++) {
-  if (i === 3) {
-    alert(`Great guess, ${userName}! My favorite number is 3!`);
-    }else if(questionSix < 3) {
-      questionSix = prompt('That guess is too low! Try again.');
-    }else if(questionSix > 3) {
-      questionSix = prompt('That guess is too high! Try again.');
-    }else {
-      alert('Congrats! You guessed my favorite number is 3!'); 
-      score++
-      break;
-    }
-  }
+let convertNumber = parseInt(questionSix);
+
+if (convertNumber === 3) {
+  alert(`Great guess, ${userName}! My favorite number is 3!`);
+}
+else if (convertNumber > 3) {
+  alert('That number is too high.');
+  totalAttempts--;
+  alert(`You have ${totalAttempts} more chances to guess the correct number!`);
+}
+else if (convertNumber < 3) {
+  alert('That number is too low.');
+  totalAttempts--;
+  alert(`You have ${totalAttempts} more chances to guess the correct number!`);
+}
+else (totalAttempts === 4); {
+  alert(`Shucks, no more chances left to guess.  The correct number is 3.`);
+
+  score++;
+}
+
+let favoriteColor = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple'];
+let colorGuess = 6
+
+while (colorGuess !++ 0){
+  let questionSeven = prompt ('What is my favorite color? You have 6 chances to guess!').toLowerCase();
+
+
+
+}
 
 
 
 
-
-  alert(`Thank you, ${userName}! I hope you enjoyed my guessing game. You correctly guessed ${score} out of 7 questions!`);
+alert(`Thank you, ${userName}! I hope you enjoyed my guessing game. You correctly guessed ${score} out of 7 questions!`);
