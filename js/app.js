@@ -46,7 +46,7 @@ else{
   alert('Please answer y or n');
 }
 
-let questionFour = prompt('President Obama graduated from Punahou School. Do you think I also graduated from the same school?').toLowerCase;
+let questionFour = prompt('President Obama graduated from Punahou School. Do you think I also graduated from the same school?').toLowerCase();
 console.log(questionFour);
 
 if (questionFour === 'yes' || questionFour === 'y'){
@@ -59,7 +59,7 @@ else{
   alert('Please answer y or n');
 }
 
-let questionFive = prompt('Hula is a traditional dance in Hawaii. Do you think I also dance hula?').toLowerCase;
+let questionFive = prompt('Hula is a traditional dance in Hawaii. Do you think I also dance hula?').toLowerCase();
 console.log(questionFive);
 
 if (questionFive === 'yes' || questionFive === 'y'){
@@ -78,37 +78,52 @@ for(let i = 0; i < 4; i++){
 
   let questionSix = +prompt('What is my favorite number? You have 4 chances to guess!');
   console.log(questionSix);
-  score++;
   if(questionSix > myNumber){
     alert('Sorry, that guess is too high.');
   } else if(questionSix < myNumber){
     alert('Sorry, that guess is too low');
   } else if(questionSix === myNumber){
     alert('Awesome, you are correct! My favorite number is 3!');
+    score++;
     break;
   }
   if(i === 3){
-    alert('Sorry, you used your 4 chances to guess!');
+alert('Sorry, you used your 4 chances to guess!');
   }
 }
 
 
-let favoriteColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple'];
+let favoriteColors = ['red','orange','yellow','green','blue','purple'];
 
-for(let i = 0; i < 6; i++){
+for(let i = 0; i < 6; i++) {
 
-  let questionSeven = prompt ('What are my favorite colors in the rainbow? You have 6 chances to guess!').toLowerCase();
+  let questionSeven = prompt('What is one of my favorite colors in the rainbow? You have 6 chances to guess!').toLowerCase();
   console.log(questionSeven);
-  score++;
+  
+  let guessedCorrect = false;
 
-  for(let j = 0; j < favoriteColors.length; j++){
-    if(questionSeven === favoriteColors[j]){
+  for(let j = 0; j < favoriteColors.length; j++) {
+    if(questionSeven === favoriteColors[j]) {
       alert('YES! YOU ARE AWESOME! I LOVE THAT COLOR!');
-      i = 5;
+      guessedCorrect = true;
+      score++;
       break;
     }
   }
+
+  if(guessedCorrect === false) {
+    alert('Sorry, that is not the right color. Guess again!')
+  } else{
+    break;
+  }
+  
+  if(i === 5){
+    alert('Sorry, you are out of attempts.');    
+  }
 }
+
 alert(`Here are all my favorite colors: ${favoriteColors}`);
+
+
 
 alert(`Thank you, ${userName}! I hope you enjoyed my guessing game. You correctly guessed ${score} out of 7 questions!`);
